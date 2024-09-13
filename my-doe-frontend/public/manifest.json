@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Aquatrack",
+  "name": "Aquatrack - Water Quality Tracker",
   "icons": [
     {
       "src": "favicon.ico",
