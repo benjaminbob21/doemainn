@@ -2,6 +2,7 @@ import { createContext, useContext } from "react";
 import PropTypes from "prop-types";
 import * as apiClient from "../api-client.js";
 import { useQuery } from "react-query";
+import LottieAnimation from "../components/Load.jsx";
 
 /**
  * @typedef {Object} AppContext
@@ -15,7 +16,7 @@ export const AppContextProvider = ({ children }) => {
     retry: false,
   });
   if (isLoading) {
-    return <>Loading...</>
+    return <LottieAnimation />;
   }
   return (
     <AppContext.Provider value={{ isLoggedIn: !isError }}>
