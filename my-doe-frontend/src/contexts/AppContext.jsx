@@ -11,9 +11,12 @@ import { useQuery } from "react-query";
 const AppContext = createContext({ isLoggedIn: false });
 
 export const AppContextProvider = ({ children }) => {
-  const { isError } = useQuery("validateToken", apiClient.validateToken, {
+  const { isError, isLoading } = useQuery("validateToken", apiClient.validateToken, {
     retry: false,
   });
+  if (isLoading) {
+    return <>Loading...</>
+  }
   return (
     <AppContext.Provider value={{ isLoggedIn: !isError }}>
       {children}

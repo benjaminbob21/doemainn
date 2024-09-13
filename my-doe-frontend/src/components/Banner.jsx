@@ -2,7 +2,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const Banner = () => {
   return (
-    <div className="md:px-32 bg-white rounded-lg shadow-md py-8 flex flex-col gap-5 text-center -mt-16 text-5xl font-bold tracking-tighter text-blue-600">
+    <div className="md:px-32 bg-white rounded-lg shadow-md py-8 flex flex-col gap-5 text-center -mt-16 text-5xl font-bold tracking-tighter text-blue-600 min-h-28">
       <TypeAnimation
         sequence={[
           "Quality Matters!", // Types 'Hello'
