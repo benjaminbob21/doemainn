@@ -5,10 +5,11 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import datavis from "../ui/datavis.jpeg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Separator } from "../ui/separator";
 
 const Slidedata2 = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center px-5 pb-5">
       <div className="relative w-[75%] bg-gray-200 border rounded-xl px-10 py-10">
@@ -38,37 +39,39 @@ const Slidedata2 = () => {
               </span>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuItem className="bg-blue-600  hover:bg-blue-300">
-                <Link to="/datetime-ph1" className="font-bold">
-                  DateTime vs pH
-                </Link>
+              <DropdownMenuItem
+                onClick={() => navigate("/datetime-ph1")}
+                className="bg-blue-600 hover:bg-blue-300 font-bold text-white"
+              >
+                DateTime vs pH
               </DropdownMenuItem>
               <Separator />
-              <DropdownMenuItem className="bg-blue-600  hover:bg-blue-300">
-                <Link to="/datetime-phmv1" className="font-bold">
-                  Datetime vs pHMV
-                </Link>
+              <DropdownMenuItem
+                onClick={() => navigate("/datetime-phmv1")}
+                className="bg-blue-600  hover:bg-blue-300 font-bold text-white"
+              >
+                Datetime vs pHMV
               </DropdownMenuItem>
               <Separator />
-              <DropdownMenuItem className="bg-blue-600  hover:bg-blue-300">
-                <Link
-                  to="/pHmvTemperature-visualization1"
-                  className="font-bold"
-                >
-                  pHpHmvTemperature
-                </Link>
+              <DropdownMenuItem
+                onClick={() => navigate("/pHmvTemperature-visualization1")}
+                className="bg-blue-600  hover:bg-blue-300 font-bold text-white"
+              >
+                pHpHmvTemperature
               </DropdownMenuItem>
               <Separator />
-              <DropdownMenuItem className="bg-blue-600  hover:bg-blue-300">
-                <Link to="/pHmv-visualization1" className="font-bold">
-                  pH vs pHMV
-                </Link>
+              <DropdownMenuItem
+                onClick={() => navigate("/pHmv-visualization1")}
+                className="bg-blue-600  hover:bg-blue-300 font-bold text-white"
+              >
+                pH vs pHMV
               </DropdownMenuItem>
               <Separator />
-              <DropdownMenuItem className="bg-blue-600  hover:bg-blue-300">
-                <Link to="/pHTemperature-visualization1" className="font-bold">
-                  pH vs Temperature
-                </Link>
+              <DropdownMenuItem
+                onClick={() => navigate("/pHTemperature-visualization1")}
+                className="bg-blue-600  hover:bg-blue-300 font-bold text-white"
+              >
+                pH vs Temperature
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

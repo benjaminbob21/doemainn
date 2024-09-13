@@ -35,24 +35,24 @@ const AppRoutes = () => {
           )
         }
       ></Route>
-      {/* <Route element={<Notprotected />}> */}
-      <Route
-        path="sign-in"
-        element={
-          <Layout>
-            <Login />
-          </Layout>
-        }
-      ></Route>
-      <Route
-        path="sign-up"
-        element={
-          <Layout Home>
-            <Register />
-          </Layout>
-        }
-      ></Route>
-      {/* </Route> */}
+      <Route element={<Notprotected />}>
+        <Route
+          path="sign-in"
+          element={
+            <Layout>
+              <Login />
+            </Layout>
+          }
+        ></Route>
+        <Route
+          path="sign-up"
+          element={
+            <Layout Home>
+              <Register />
+            </Layout>
+          }
+        ></Route>
+      </Route>
       <Route path="*" element={<Navigate to="/" />}></Route>
 
       <Route element={<ProtectedRoute />}>
