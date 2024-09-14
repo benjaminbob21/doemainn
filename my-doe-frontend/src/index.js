@@ -24,7 +24,7 @@ root.render(
       <QueryClientProvider client={queryClient}>
         <AppContextProvider>
           <AppRoutes />
-          <Toaster duration={2500} visibleToasts={1} position="top-right" richColors />
+          <Toaster visibleToasts={1} position="top-right" richColors />
         </AppContextProvider>
       </QueryClientProvider>
     </Router>

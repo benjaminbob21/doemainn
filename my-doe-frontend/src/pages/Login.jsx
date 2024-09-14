@@ -25,7 +25,7 @@ const Login = () => {
   } = useForm();
 
   const mutation = useMutation(apiClient.signIn, {
-    onSuccess: async() => {
+    onSuccess: async () => {
       console.log("User has been signed");
       toast.success("Signed In!");
       await queryClient.invalidateQueries("validateToken");

@@ -32,9 +32,6 @@ app.use((0, cors_1.default)({
     credentials: true,
 }));
 app.use(express_1.default.static(path_1.default.join(__dirname, "../../my-doe-frontend/build")));
-app.get("*", (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, "../../my-doe-frontend/build/index.html"));
-});
 // Mount the data routes
 app.use("/api", route_1.default);
 app.get("/api/waterqualityData", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -275,7 +272,10 @@ app.get("/api/batteryData/DateTimeTemperature", (req, res) => __awaiter(void 0, 
         res.status(500).json({ message: "Internal server error" });
     }
 }));
-app.get("/", (req, res) => res.json("Connected to API"));
+app.use(express_1.default.static(path_1.default.join(__dirname, "../../my-doe-frontend/build")));
+app.get("*", (req, res) => {
+    res.sendFile(path_1.default.join(__dirname, "../../my-doe-frontend/build/index.html"));
+});
 // Start the server
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {

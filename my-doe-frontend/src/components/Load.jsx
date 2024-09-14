@@ -5,7 +5,7 @@ import animationData from "../assets/load3.json"; // Update the path accordingly
 const LottieAnimation = () => {
   const defaultOptions = {
     loop: true,
-    autoplay: true, 
+    autoplay: true,
     animationData: animationData,
   };
 
