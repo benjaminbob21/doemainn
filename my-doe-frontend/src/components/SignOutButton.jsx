@@ -12,7 +12,7 @@ const SignOutButton = () => {
     },
     onError: (error) => {
       console.log(error.toString());
-      toast.success(error.message);
+      toast.error(error.message);
     },
   });
   const handleClick = () => {

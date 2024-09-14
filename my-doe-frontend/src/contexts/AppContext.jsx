@@ -4,6 +4,8 @@ import * as apiClient from "../api-client.js";
 import { useQuery } from "react-query";
 import LottieAnimation from "../components/Load.jsx";
 
+// import EventListener from "react-lottie";
+
 /**
  * @typedef {Object} AppContext
  * @property {boolean} isLoggedIn
@@ -15,7 +17,14 @@ export const AppContextProvider = ({ children }) => {
   const { isError, isLoading } = useQuery("validateToken", apiClient.validateToken, {
     retry: false,
   });
-  if (isLoading) {
+
+  // const loadingListenener = EventListener("completed", () => {
+  //   if (isLoading) {
+  //     setIsLoading(false);
+  //   }
+  // });
+
+  if (isLoading) { 
     return <LottieAnimation />;
   }
   return (

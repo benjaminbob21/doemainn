@@ -25,6 +25,10 @@ app.use(
 
 app.use(express.static(path.join(__dirname, "../../my-doe-frontend/build")));
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../../my-doe-frontend/build/index.html"));
+});
+
 // Mount the data routes
 app.use("/api", route);
 
