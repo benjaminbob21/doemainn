@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import LottieAnimation from "./Load";
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "";
 
@@ -13,9 +14,11 @@ function RectangleVisualization3() {
   const [data, setData] = useState([]);
   const [scaledPoints, setScaledPoints] = useState([]);
   const [selectedPoint, setSelectedPoint] = useState(null);
+  const [isLoading, setIsLoading] = useState(true); // Loading state
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true); // Start loading
       try {
         const minMaxResponse = await axios.get(
           `${API_BASE_URL}/api/batteryData/maxmin`
@@ -28,6 +31,8 @@ function RectangleVisualization3() {
         setData(dataResponse.data);
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
+        setIsLoading(false); // Stop loading
       }
     };
 
@@ -63,6 +68,9 @@ function RectangleVisualization3() {
       setScaledPoints(newScaledPoints);
     }
   }, [data, minMaxValues]);
+  if (isLoading) {
+    return <LottieAnimation />;
+  }
 
   console.log(scaledPoints);
   console.log(data);

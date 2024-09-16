@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import LottieAnimation from "./Load";
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "";
 
@@ -13,9 +14,11 @@ function RectangleVisualization2() {
   const [data, setData] = useState([]);
   const [scaledPoints, setScaledPoints] = useState([]);
   const [selectedPoint, setSelectedPoint] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       try {
         const minMaxResponse = await axios.get(
           `${API_BASE_URL}/api/waterqualityDatasecond/maxmin`
@@ -28,6 +31,8 @@ function RectangleVisualization2() {
         setData(dataResponse.data);
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
+        setIsLoading(false); // Stop loading
       }
     };
 
@@ -69,6 +74,9 @@ function RectangleVisualization2() {
       setScaledPoints(newScaledPoints);
     }
   }, [data, minMaxValues]);
+  if (isLoading) {
+    return <LottieAnimation />;
+  }
 
   return (
     <div className="relative w-[80%] mt-[200px] ml-[50px] border-[5px] border-solid border-blue-600 rounded-lg p-5 box-border bg-[#00bfff]">

@@ -276,6 +276,7 @@ app.use(express_1.default.static(path_1.default.join(__dirname, "../../my-doe-fr
 app.get("*", (req, res) => {
     res.sendFile(path_1.default.join(__dirname, "../../my-doe-frontend/build/index.html"));
 });
+// app.get("/", (req: Request, res: Response) => res.json("Connected to API"));
 // Start the server
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {

@@ -11,6 +11,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import LottieAnimation from "../Load";
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "";
 
@@ -66,7 +67,7 @@ const DateTimePHVisualization = () => {
   }, []);
 
   if (!data) {
-    return <p>Loading...</p>;
+    return <LottieAnimation />;
   }
 
   return (
