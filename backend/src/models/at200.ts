@@ -1,19 +1,18 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database";
 
-
 export type WaterQualityDataAttribute = {
-    DateTime: Date;
-    Salinity: number;
-    TotalDissolvedSolids: number;
-    pH: number;
-    pHMV: number;
-    SaturationOxygen: number;
-    PartialPressureOxygen: number;
-    StationID: string;
-    Easting: number;
-    Northing: number;
-    Temperature: number;
+  DateTime: Date | null;
+  Salinity: number | null;
+  TotalDissolvedSolids: number | null;
+  pH: number | null;
+  pHMV: number | null;
+  SaturationOxygen: number | null;
+  PartialPressureOxygen: number | null;
+  StationID: string | null;
+  Easting: number | null;
+  Northing: number | null;
+  Temperature: number | null;
 };
 
 export const WaterQualityData = sequelize.define("WaterQualityData", {

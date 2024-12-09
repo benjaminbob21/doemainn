@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 
 export const sequelize = new Sequelize(
-  "postgresql://bob:gAVOpK7Vwea3jaw7YbMkh6B1rNYZcSs0@dpg-cr7vsodsvqrc73dlv4f0-a.oregon-postgres.render.com/doeproject_tmju",
+  "postgresql://doemain_db_user:rNuv1VQ5umb7yfVmnadpLOspMZ4xAI1B@dpg-csv5hnqj1k6c73c1l6g0-a.oregon-postgres.render.com/doemain_db",
   {
     dialect: "postgres",
     dialectOptions: {

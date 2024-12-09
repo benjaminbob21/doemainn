@@ -1,16 +1,16 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database";
 
-
 export type BatteryDataAttribute = {
-    DateTime: Date;
-    BatteryLevel: number;
-    StationID: string;
-    Baro: number | null;
-    Temperature: number | null;
-    Easting: number;
-    Northing: number;
-}
+  DateTime: Date | null;
+  BatteryLevel: number | null;
+  StationID: string | null;
+  Baro: number | null;
+  Temperature: number | null;
+  Easting: number | null;
+  Northing: number | null;
+};
+
 export const BatteryData = sequelize.define("BatteryData", {
   DateTime: {
     type: DataTypes.DATE,

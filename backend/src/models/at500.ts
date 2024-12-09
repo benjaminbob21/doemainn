@@ -2,12 +2,12 @@ import { DataTypes } from "sequelize";
 import { sequelize } from "../database";
 
 export type WaterQualityDataSecondAttribute = {
-    DateTime: Date;
-    Salinity: number;
-    TotalDissolvedSolids: number;
-    StationID: string;
-    Easting: number;
-    Northing: number;
+  DateTime: Date | null;
+  Salinity: number | null;
+  TotalDissolvedSolids: number | null;
+  StationID: string | null;
+  Easting: number | null;
+  Northing: number | null;
 };
 
 export const WaterQualityDataSecond = sequelize.define(
